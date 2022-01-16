@@ -55,9 +55,10 @@
 
         <div class="container mt-3">
 
-            <table class="table">
+            <table class="table table-warning">
                 <thead>
                     <tr>
+                        <th scope="col">#</th>
                         <th>Firstname</th>
                         <th>Lastname</th>
                         <th>ID</th>
@@ -67,28 +68,33 @@
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr v-for="i in name.length" :key="i">
-
-                        <td v-if="gpa[i-1] < 2" style="color: red; font-weight: bolder;">{{name[i-1]}}</td>
-                        <td v-else class="text-success " style="font-weight: bolder;">{{name[i-1]}}</td>
-                        <td v-if="gpa[i-1] < 2" style="color: red; font-weight: bolder;">{{lname[i-1]}}</td>
-                        <td v-else class="text-success " style="font-weight: bolder;">{{lname[i-1]}}</td>
-                        <td v-if="gpa[i-1] < 2" style="color: red; font-weight: bolder;">{{id[i-1]}}</td>
-                        <td v-else class="text-success " style="font-weight: bolder;">{{id[i-1]}}</td>
-                        <td v-if="gpa[i-1] < 2" style="color: red; font-weight: bolder;">{{gmail[i-1]}}</td>
-                        <td v-else class="text-success " style="font-weight: bolder;">{{gmail[i-1]}}</td>
-                        <td v-if="gpa[i-1] < 2" style="color: red; font-weight: bolder;">{{gpa[i-1]}}</td>
-                        <td v-else class="text-success " style="font-weight: bolder;">{{gpa[i-1]}}</td>
-                        
-                        
-    
+                <tbody v-for="i in name.length" :key="i">
+                   
+                    <tr v-if="gpa[i-1] < 2" style="color: red; font-weight: bolder;">
+                        <th scope="row"> {{i}}</th>
+                        <td  >{{name[i-1]}}</td>
+                        <td  >{{lname[i-1]}}</td>
+                        <td  >{{id[i-1]}}</td>
+                        <td  >{{gmail[i-1]}}</td>
+                        <td  >{{gpa[i-1]}}</td>
                         <td><button @click="pop(i-1)" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                           </svg></button></td>
-                        
                     </tr>
+                    <tr v-else style="color: green; font-weight: bolder;">
+                        <th scope="row"> {{i}}</th>
+                        <td  >{{name[i-1]}}</td>
+                        <td  >{{lname[i-1]}}</td>
+                        <td  >{{id[i-1]}}</td>
+                        <td  >{{gmail[i-1]}}</td>
+                        <td  >{{gpa[i-1]}}</td>
+                        <td><button @click="pop(i-1)" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                          </svg></button></td>
+                    </tr>
+                   
 
                 </tbody>
             </table>
@@ -103,7 +109,7 @@
             lname: ["กรอบ"],
             id: ["604501888"],
             gmail: ["aaaaaaaaaaaaaaaaaaaaaaaaa"],
-            gpa: [1],
+            gpa: [4],
             datas:[null,null,null,null,null],
             red: "",
             size: "",
